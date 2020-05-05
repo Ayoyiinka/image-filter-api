@@ -22,7 +22,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string>{
                 resolve(__dirname + outpath);
             });
         } catch {
-            reject()
+            reject('')
         }
     })
 }
