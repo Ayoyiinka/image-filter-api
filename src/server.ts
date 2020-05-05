@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import {Request, Response} from 'express';
 
 (async () => {
 
@@ -28,8 +29,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-  app.get( "/filteredimage", async ( req, res ) => {
-    let image_url = req.query.image_url;
+  app.get( "/filteredimage", async ( req: Request, res: Response ) => {
+    let image_url:string = req.query.image_url;
     if (image_url) {
       filterImageFromURL(image_url).then((response) => {
           res.status(200).sendFile(response);
@@ -38,7 +39,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         });
         }).catch(() => res.status(422).send('Unprocessable!!! please send a valid image url'))
         } else {
-      res.status(404).send("Please send an image_url");
+      res.status(400).send("Please send an image_url");
     }
   });
   //! END @TODO1

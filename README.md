@@ -1,5 +1,6 @@
 # Udagram Image Filtering Microservice
 
+- github repository URL: https://github.com/Ayoyiinka/image-filter-api.git
 - the screenshot of the elastic beanstalk application dashboard after deployement can be found in the deployment_screenshots directory
 - the link to the endpoint URL for a running elastic beanstalk deployment: http://image-filter-api-v1-dev.us-east-1.elasticbeanstalk.com/
 
